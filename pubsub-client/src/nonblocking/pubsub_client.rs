@@ -304,7 +304,7 @@ impl PubsubClient {
         Ok(())
     }
 
-    async fn subscribe<'a, T>(&self, operation: &str, params: Value) -> SubscribeResult<'a, T>
+    pub async fn subscribe<'a, T>(&self, operation: &str, params: Value) -> SubscribeResult<'a, T>
     where
         T: DeserializeOwned + Send + 'a,
     {
